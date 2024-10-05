@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+}
+.body {
+    display: block;
+  
+}
+.body h1 {
+    color: aqua;
+    text-align: center;
+    text-transform: uppercase;
+  margin-bottom: 100px;
+
+}
+#countdown {
+    font-size: 2em;
+    color: #d12424;
+}
+
+/* h1 {
+    text-align: center;
+    text-transform: uppercase;
+} */

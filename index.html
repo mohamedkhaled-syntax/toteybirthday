@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="body">
+        <h1>totey birthday</h1>
+
+        <div id="countdown">Loading...</div>
+    </div>
+
+
+
+    <script>
+        // Function to calculate and display the countdown
+        function countdownToDate(targetDate) {
+            const now = new Date(); // Get the current date and time
+            const timeRemaining = targetDate - now; // Calculate the time difference
+
+            if (timeRemaining > 0) {
+                // Convert the time difference to days, hours, minutes, and seconds
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                // Display the result in the HTML
+                document.getElementById('countdown').innerHTML =
+                    `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds remaining until November 5, 2024.`;
+            } else {
+                document.getElementById('countdown').innerHTML = "The countdown has ended.";
+            }
+        }
+
+        // Define the target date
+        const targetDate = new Date('2024-11-05T00:00:00');
+
+        // Update the countdown every second
+        setInterval(() => {
+            countdownToDate(targetDate);
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
